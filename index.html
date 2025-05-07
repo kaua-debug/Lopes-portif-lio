@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortifólioDoLopes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-content">
+            <img src="imagens/55f11343-9c93-4536-a0f3-1c56bd18d458.png" alt="Minha Foto" class="perfil-foto">
+
+
+            <h2>Portifólio Do Lopes</h2>
+        </div>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+    </header>
+    
+
+
+        <nav>
+            <a href="#sobre">Sobre Mim</a>
+            <a href="#projetos">Projetos</a>
+            <a href="contatos">Contatos</a>
+        </nav>
+   
+            <section id="sobre">
+
+                <h2>Sobre Mim</h2>
+                <p>Olá eu sou Kauã, desenvolvedor de web apaixonado por criar aplicações modernas e funcionais. <br>Tenho um pouco de conhecimento em JavaScript, HTML, CSS, typeScript. <br>Também tenho comhecimento minimo com as frameworks next.js, e express que é um framework minimalista e flexivel para node.js <br>usado para construir aplicações web e APis e amo resolver problemas com código limpo e eficiente</p>
+            </section>
+
+            <section id="projetos">
+
+              <h2>Projetos</h2>
+              <div class="projects">
+                  <div class="projects-card">
+                      <h3>Projeto 1: Crawler-js</h3>
+                      <p>Descrição breve do projeto. Tecnologias usadas: HTML, CSS, JavaScript, express, node.js</p>
+                      <a href="https://github.com/kaua-debug/crawler-js.git">Ver mais</a>
+                  </div>
+                  <div class="projects-card">
+                      <h2>Projeto 2: Projeto next01</h2>
+                      <p>Descrição breve do projeto Tecnologias usadas: HTML, CSS, TypeScript, framework next.js</p>
+                      <a href="https://github.com/kaua-debug/projeto_next01.git">Ver mais</a>
+                  </div>
+                  <div class="projects-card">
+                    <h3>Projeto 3: Clima app</h3>
+                    <p>Descrição breve do projeto. Tecnologias usadas: Next.js, typeScript, CSS e HTML</p>
+                    <a href="https://github.com/kaua-debug/clima-app.git"></a>
+                  </div>
+              </div>
+            </section>
+
+            <section id="contatos">
+                <h2>Contato</h2>
+                <form class="contact-form">
+
+                    <label for="name">Nome</label>
+                    <input 
+                    type="text" 
+                    placeholder="Seu nome"
+                    required
+                    >
+
+                    <label for="email"> E-mail</label>
+                    <input  
+                    type="email" 
+                    placeholder="Seu e-mail"
+                    required
+                    >
+
+                    <label for="message">Mensagem</label>
+                    <textarea 
+                    rows="5" 
+                    placeholder="Sua mensagem required"></textarea>
+
+                    <button type="submit">Enviar</button>
+
+                    <p id="formResponse" style="margin-top: 1rem;"></p>
+
+                </form>
+            </section>
+
+            <footer>
+                <p>&copy; 2025 kaua-debug. Todos os direitos reservados.</p>
+            </footer>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+/* Reset básico */
+
+.perfil-foto {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #45a29e;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #0b0c10;
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 2px solid #1f2833;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.perfil-foto {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #45a29e;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.perfil-foto:hover {
+    transform: scale(1.1);
+}
+
+.main-header h2 {
+    font-size: 1.8rem;
+    color: #66fcf1;
+    text-shadow: 0 0 10px rgba(102, 252, 241, 0.7);
+}
+
+/* Nav */
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 15px 0;
+}
+
+.main-nav a {
+    color: #c5c6c7;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: #66fcf1;
+}
+
+/* Seções */
+section {
+    margin: 40px 0;
+    padding: 20px;
+    border: 2px solid #1f2833;
+    border-radius: 10px;
+    background-color: #1f2833;
+    box-shadow: 0 0 20px #45a29e55;
+}
+
+section h2 {
+    color: #66fcf1;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Projetos */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.projects-card {
+    background: #0b0c10;
+    border: 2px solid #45a29e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projects-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #66fcf1aa;
+}
+
+.projects-card h3 {
+    color: #66fcf1;
+    margin-bottom: 10px;
+}
+
+.projects-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #45a29e;
+    text-decoration: none;
+    border: 1px solid #45a29e;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.projects-card a:hover {
+    background: #45a29e;
+    color: #0b0c10;
+}
+
+/* Contato */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #45a29e;
+    border-radius: 5px;
+    background: #0b0c10;
+    color: #ffffff;
+    resize: none;
+}
+
+.contact-form button {
+    padding: 10px;
+    background: #45a29e;
+    color: #0b0c10;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #66fcf1;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 0.9rem;
+    color: #c5c6c7;
+}
