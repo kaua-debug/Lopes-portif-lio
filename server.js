@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 const { Client } = require('pg');
 
 const client = new Client({
-    connectionString: 'postgresql://usuario:senha@localhost:5432/nome_do_banco',
+    connectionString: 'postgresql://postgres:suhglkmi13@localhost:5432/postgres',
     ssl: false  // tenta sem SSL explicitamente
 });
 
