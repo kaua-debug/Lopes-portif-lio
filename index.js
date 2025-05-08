@@ -17,50 +17,57 @@ themeToggle.addEventListener('click', () => {
 })
 
     //isso vai manipular o envio do seu formulario com a validação e animação
-    const form = document.querySelector('.contact-form')
-    const formResponse = document.getElementById('formResponse') 
+    const form = document.querySelector('.contact-form');
+const formResponse = document.getElementById('formResponse');
 
-    form.addEventListener(submit, function(e) {
-        e.preventDefault()
+form.addEventListener('submit', async function(e) {
+    e.preventDefault();
 
+    const nome = form.querySelector('input[type="text"]').value.trim();
+    const email = form.querySelector('input[type="email"]').value.trim();
+    const mensagem = form.querySelector('textarea').value.trim();
 
-        const nome = form.querySelector('input[type="text"]').value.trim()
-        const email = form.querySelector('input[type="email"]').value.trim()
-        const mensagem = form.querySelector('textarea').value.trim()
+    formResponse.textContent = '';
+    formResponse.style.color = 'red';
 
-        //Limpa as mensagens antigas
-        formResponse.textContent = ''
-        formResponse.style.color = 'red'
+    if (nome.length < 2) {
+        formResponse.textContent = 'Nome deve ter pelo menos 3 caracteres';
+        return;
+    }
+    if (!validateEmail(email)) {
+        formResponse.textContent = 'Por favor, insira um e-mail válido';
+        return;
+    }
 
-        //validaçoes simples
-        if (nome.length < 2) {
-            formResponse.textContent = 'nome deve ter pelo menos 3 caracteres'
-            return
+    formResponse.style.color = 'blue';
+    formResponse.textContent = 'Enviando...';
+
+    try {
+        const response = await fetch('http://localhost:5000/contato', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ nome, email, mensagem })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            formResponse.style.color = 'green';
+            formResponse.textContent = `Obrigado ${nome}, sua mensagem foi enviada com sucesso!`;
+            form.reset();
+        } else {
+            formResponse.style.color = 'red';
+            formResponse.textContent = data.message;
         }
-        if (!validateEmail(email)) {
-            formResponse,this.textContent = 'Por favor, insira um e-mail valido'
-            return
-        }
+    } catch (error) {
+        formResponse.style.color = 'red';
+        formResponse.textContent = 'Erro ao enviar mensagem. Tente novamente!';
+    }
+});
 
-        //vai simular uma animação simples no envio
-        formResponse.style.color ='blue'
-        formResponse.textContent = 'Enviando..'
-
-        setTimeout(() => {
-            formResponse.style.color = 'green'
-            formResponse.textContent = `Obrigado${nome}, sua mensagem foi enviada com sucesso!`
-
-        //limoa o formulario dps de enviar 
-        form.reset()
-        }, 1500)
-    })
-
-
-        function validateEmail(email) {
-            //expressão para validar email
-            const re =  /\S+@\S+\.\S+/;
-            return re.test(email)
-        }
-
-        //inicia AOS (animação de rolagem)
-        AOS.init()
+function validateEmail(email) {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+}
